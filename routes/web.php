@@ -27,3 +27,14 @@ Route::prefix('admin')->group(function () {
     Route::post('/requests/{id}/status', [AdminController::class, 'updateRequestStatus'])->name('admin.requests.status');
     Route::post('/distributions', [AdminController::class, 'storeDistribution'])->name('admin.distributions.store');
 });
+
+use Illuminate\Support\Facades\Artisan;
+
+Route::get('/run-migrations', function () {
+    try {
+        Artisan::call('migrate', ['--force' => true]);
+        return '<pre>' . Artisan::output() . '</pre>';
+    } catch (\Exception $e) {
+        return '<pre>' . $e->getMessage() . '</pre>';
+    }
+});
