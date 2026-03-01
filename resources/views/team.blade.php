@@ -27,9 +27,9 @@
                 <div class="max-w-sm">
                     <div class="bg-white p-6 rounded-3xl border-4 border-genz-dark shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_rgba(15,23,42,1)] transition-all">
                         <div class="aspect-w-1 aspect-h-1 mb-6">
-                            <img src="https://ui-avatars.com/api/?name=Founder+Name&background=FACC15&color=0f172a&size=256&font-size=0.33&bold=true" alt="Founder" class="w-full h-auto rounded-2xl border-4 border-genz-dark object-cover grayscale hover:grayscale-0 transition-all duration-300">
+                            <img src="https://ui-avatars.com/api/?name=Farzeen&background=FACC15&color=0f172a&size=256&font-size=0.33&bold=true" alt="Founder" class="w-full h-auto rounded-2xl border-4 border-genz-dark object-cover grayscale hover:grayscale-0 transition-all duration-300">
                         </div>
-                        <h4 class="text-2xl font-black text-genz-dark uppercase">Founder Name</h4>
+                        <h4 class="text-2xl font-black text-genz-dark uppercase">Farzeen</h4>
                         <p class="text-genz-pink font-bold uppercase tracking-widest text-sm mb-4">Founder & Visionary</p>
                         <p class="text-gray-600 font-medium">Leading the charge to eliminate overhead and connect donors directly with those in critical need.</p>
                     </div>
@@ -82,6 +82,41 @@
 
                 </div>
             </div>
+
+            <!-- Supporters -->
+            <div class="mt-32">
+                <h3 class="text-3xl font-black text-genz-dark uppercase tracking-widest border-l-4 border-genz-pink pl-4 mb-10">The Supporters</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    
+                    <!-- Supporter 1: Shaheel -->
+                    <div class="bg-white p-6 rounded-3xl border-4 border-genz-dark shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_rgba(15,23,42,1)] transition-all">
+                        <div class="aspect-w-1 aspect-h-1 mb-6">
+                            <img src="https://ui-avatars.com/api/?name=Shaheel&background=EC4899&color=ffffff&size=256&font-size=0.33&bold=true" alt="Shaheel" class="w-full h-auto rounded-2xl border-4 border-genz-dark object-cover grayscale hover:grayscale-0 transition-all duration-300">
+                        </div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-2xl font-black text-genz-dark uppercase">Shaheel</h4>
+                            <span class="text-2xl">🤝</span>
+                        </div>
+                        <p class="text-genz-pink font-bold uppercase tracking-widest text-sm mb-4">Dedicated Supporter</p>
+                        <p class="text-gray-600 font-medium">Providing essential backing to ensure our mission reaches those most in need.</p>
+                    </div>
+
+                    <!-- Supporter 2: Dr. Haroon -->
+                    <div class="bg-white p-6 rounded-3xl border-4 border-genz-dark shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_rgba(15,23,42,1)] transition-all transform md:translate-y-8">
+                        <div class="aspect-w-1 aspect-h-1 mb-6">
+                            <img src="https://ui-avatars.com/api/?name=Dr+Haroon&background=8B5CF6&color=ffffff&size=256&font-size=0.33&bold=true" alt="Dr Haroon" class="w-full h-auto rounded-2xl border-4 border-genz-dark object-cover grayscale hover:grayscale-0 transition-all duration-300">
+                        </div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-2xl font-black text-genz-dark uppercase">Dr. Haroon</h4>
+                            <span class="text-2xl">🩺</span>
+                        </div>
+                        <p class="text-genz-purple font-bold uppercase tracking-widest text-sm mb-4">Dedicated Supporter</p>
+                        <p class="text-gray-600 font-medium">Championing the health sector initiatives and supporting medical interventions.</p>
+                    </div>
+
+                </div>
+            </div>
+            
         </div>
     </div>
 </x-app-layout>
