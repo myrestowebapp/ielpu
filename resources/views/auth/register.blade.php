@@ -1,53 +1,92 @@
 <x-app-layout title="Register">
-    <div class="max-w-md mx-auto my-16 bg-white p-8 border rounded shadow">
-        <h2 class="text-2xl font-bold mb-6 text-center">Create an Account</h2>
-        
-        @if ($errors->any())
-            <div class="mb-4 bg-red-50 border-l-4 border-red-500 p-4 text-red-700 text-sm">
-                <ul class="list-disc pl-5">
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+    <div class="min-h-screen bg-genz-cyan/20 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div class="sm:mx-auto sm:w-full sm:max-w-md">
+            <h2 class="mt-6 text-center text-4xl font-black text-genz-dark tracking-tight">Join <span class="bg-genz-pink text-white px-2 transform rotate-2 inline-block shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] border-2 border-genz-dark">IELP</span></h2>
+            <p class="mt-2 text-center text-sm text-gray-600 font-bold uppercase tracking-widest">
+                Start making an impact today 🌍
+            </p>
+        </div>
 
-        <form action="{{ route('register.post') }}" method="POST">
-            @csrf
-            
-            <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-1">Full Name</label>
-                <input type="text" name="name" class="w-full border p-2 rounded focus:ring focus:ring-blue-200 focus:outline-none" value="{{ old('name') }}" required autofocus>
+        <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+            <div class="bg-white py-8 px-4 shadow-brutal border-4 border-genz-dark rounded-2xl sm:px-10 mb-8">
+                
+                @if ($errors->any())
+                    <div class="mb-6 bg-genz-pink/10 border-4 border-genz-pink p-4 rounded-xl shadow-[4px_4px_0px_0px_rgba(236,72,153,1)]">
+                        <ul class="list-disc pl-5 text-genz-dark font-bold text-sm">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form class="space-y-6" action="{{ route('register.post') }}" method="POST">
+                    @csrf
+                    
+                    <div>
+                        <label for="name" class="block text-sm font-black text-genz-dark uppercase tracking-widest mb-2">Full Name</label>
+                        <div class="mt-1">
+                            <input id="name" name="name" type="text" value="{{ old('name') }}" required autofocus class="appearance-none block w-full px-4 py-3 border-2 border-gray-300 rounded-xl bg-gray-50 text-genz-dark font-bold focus:outline-none focus:ring-0 focus:border-genz-cyan sm:text-lg transition-colors placeholder-gray-400">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-black text-genz-dark uppercase tracking-widest mb-2">Email Address</label>
+                        <div class="mt-1">
+                            <input id="email" name="email" type="email" value="{{ old('email') }}" required class="appearance-none block w-full px-4 py-3 border-2 border-gray-300 rounded-xl bg-gray-50 text-genz-dark font-bold focus:outline-none focus:ring-0 focus:border-genz-cyan sm:text-lg transition-colors placeholder-gray-400">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-sm font-black text-genz-dark uppercase tracking-widest mb-2">Password</label>
+                        <div class="mt-1">
+                            <input id="password" name="password" type="password" required class="appearance-none block w-full px-4 py-3 border-2 border-gray-300 rounded-xl bg-gray-50 text-genz-dark font-bold focus:outline-none focus:ring-0 focus:border-genz-cyan sm:text-lg transition-colors placeholder-gray-400">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="password_confirmation" class="block text-sm font-black text-genz-dark uppercase tracking-widest mb-2">Confirm Password</label>
+                        <div class="mt-1">
+                            <input id="password_confirmation" name="password_confirmation" type="password" required class="appearance-none block w-full px-4 py-3 border-2 border-gray-300 rounded-xl bg-gray-50 text-genz-dark font-bold focus:outline-none focus:ring-0 focus:border-genz-cyan sm:text-lg transition-colors placeholder-gray-400">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="role" class="block text-sm font-black text-genz-dark uppercase tracking-widest mb-2">I want to...</label>
+                        <div class="mt-1">
+                            <select id="role" name="role" required class="appearance-none block w-full px-4 py-3 border-2 border-gray-300 rounded-xl bg-gray-50 text-genz-dark font-bold focus:outline-none focus:ring-0 focus:border-genz-cyan sm:text-lg transition-colors cursor-pointer">
+                                <option value="donor">Donate & Help Others (Donor)</option>
+                                <option value="beneficiary">Request Help (Beneficiary)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-4 px-4 rounded-xl shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] text-lg font-black text-genz-dark uppercase tracking-wider bg-genz-cyan hover:bg-cyan-400 hover:shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all border-2 border-genz-dark">
+                            Create Account
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-8">
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t-2 border-gray-200"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500 font-bold uppercase tracking-widest">
+                                Already have an account?
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <a href="{{ route('login') }}" class="w-full flex justify-center py-4 px-4 rounded-xl shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] text-lg font-black text-white uppercase tracking-wider bg-genz-purple hover:bg-purple-600 hover:shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all border-2 border-genz-dark">
+                            Login Here
+                        </a>
+                    </div>
+                </div>
             </div>
-            
-            <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-1">Email Address</label>
-                <input type="email" name="email" class="w-full border p-2 rounded focus:ring focus:ring-blue-200 focus:outline-none" value="{{ old('email') }}" required>
-            </div>
-            
-            <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-1">Password</label>
-                <input type="password" name="password" class="w-full border p-2 rounded focus:ring focus:ring-blue-200 focus:outline-none" required>
-            </div>
-            
-            <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-1">Confirm Password</label>
-                <input type="password" name="password_confirmation" class="w-full border p-2 rounded focus:ring focus:ring-blue-200 focus:outline-none" required>
-            </div>
-            
-            <div class="mb-6">
-                <label class="block text-gray-700 font-medium mb-1">I want to...</label>
-                <select name="role" class="w-full border p-2 rounded focus:ring focus:ring-blue-200 focus:outline-none" required>
-                    <option value="donor">Donate & Help Others (Donor)</option>
-                    <option value="beneficiary">Request Help (Beneficiary)</option>
-                </select>
-            </div>
-            
-            <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded font-semibold hover:bg-blue-700 transition">Register</button>
-        </form>
-        
-        <p class="mt-6 text-center text-sm text-gray-600">
-            Already have an account? <a href="{{ route('login') }}" class="text-blue-600 hover:text-blue-800 font-semibold transition">Login here</a>
-        </p>
+        </div>
     </div>
 </x-app-layout>
