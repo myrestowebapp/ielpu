@@ -15,8 +15,8 @@
         <form action="{{ route('login.post') }}" method="POST">
             @csrf
             <div class="mb-4">
-                <label class="block text-gray-700 font-medium mb-1">Email Address</label>
-                <input type="email" name="email" class="w-full border p-2 rounded focus:ring focus:ring-blue-200 focus:outline-none" value="{{ old('email') }}" required autofocus>
+                <label class="block text-gray-700 font-medium mb-1">Email Address / Username</label>
+                <input type="text" name="email" class="w-full border p-2 rounded focus:ring focus:ring-blue-200 focus:outline-none" value="{{ old('email') }}" required autofocus>
             </div>
             
             <div class="mb-6">
