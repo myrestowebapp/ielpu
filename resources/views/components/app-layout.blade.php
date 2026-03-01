@@ -24,7 +24,20 @@
             </div>
             <div class="flex items-center space-x-4">
                 <a href="{{ route('public.requests') }}" class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold transition shadow-md hover:-translate-y-0.5 transform">Donate Now</a>
-                <a href="/login" class="text-gray-600 hover:text-blue-600 font-semibold">Login</a>
+                @auth
+                    @if(auth()->user()->role === 'admin')
+                        <a href="{{ route('admin.dashboard') }}" class="text-gray-600 hover:text-blue-600 font-semibold">Admin Panel</a>
+                    @else
+                        <span class="text-gray-600 font-semibold hidden md:inline">Hello, {{ explode(' ', trim(auth()->user()->name))[0] }}</span>
+                    @endif
+                    <form action="{{ route('logout') }}" method="POST" class="inline">
+                        @csrf
+                        <button type="submit" class="text-gray-600 hover:text-red-600 font-semibold">Logout</button>
+                    </form>
+                @endauth
+                @guest
+                    <a href="{{ route('login') }}" class="text-gray-600 hover:text-blue-600 font-semibold">Login</a>
+                @endguest
             </div>
         </nav>
     </header>
@@ -47,7 +60,14 @@
                     <li><a href="{{ route('about') }}" class="hover:text-orange-500 transition">About Us</a></li>
                     <li><a href="{{ route('team') }}" class="hover:text-orange-500 transition">Our Team</a></li>
                     <li><a href="{{ route('policies') }}" class="hover:text-orange-500 transition">Policies & Guidelines</a></li>
-                    <li><a href="/login" class="hover:text-orange-500 transition">Beneficiary / Admin Login</a></li>
+                    @guest
+                        <li><a href="{{ route('login') }}" class="hover:text-orange-500 transition">Beneficiary / Admin Login</a></li>
+                    @endguest
+                    @auth
+                        @if(auth()->user()->role === 'admin')
+                            <li><a href="{{ route('admin.dashboard') }}" class="hover:text-orange-500 transition">Admin Dashboard</a></li>
+                        @endif
+                    @endauth
                 </ul>
             </div>
             <div>

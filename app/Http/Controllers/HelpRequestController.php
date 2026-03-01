@@ -25,7 +25,7 @@ class HelpRequestController extends Controller
             'location' => 'required|string|max:255',
         ]);
 
-        $validated['user_id'] = Auth::id() ?? 1; // Fallback to 1 for testing if not auth
+        $validated['user_id'] = Auth::id();
         $validated['status'] = 'pending';
         $validated['amount_raised'] = 0;
 
