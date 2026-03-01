@@ -50,6 +50,7 @@
             <div class="hidden md:flex space-x-8">
                 <a href="{{ route('home') }}" class="text-gray-600 hover:text-orange-500 font-semibold transition">Home</a>
                 <a href="{{ route('about') }}" class="text-gray-600 hover:text-orange-500 font-semibold transition">About Us</a>
+                <a href="{{ route('team') }}" class="text-gray-600 hover:text-orange-500 font-semibold transition">Our Team</a>
                 <a href="{{ route('public.requests') }}" class="text-gray-600 hover:text-orange-500 font-semibold transition">Help Requests</a>
                 <a href="{{ route('public.ledger') }}" class="text-gray-600 hover:text-orange-500 font-semibold transition">Transparency Ledger</a>
             </div>
