@@ -21,10 +21,12 @@
     <div class="bg-gray-50 py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- Founder -->
+            <!-- Founders & Co-Founders -->
             <div class="mb-20">
-                <h3 class="text-3xl font-black text-genz-dark uppercase tracking-widest border-l-4 border-genz-yellow pl-4 mb-10">The Vision</h3>
-                <div class="max-w-sm">
+                <h3 class="text-3xl font-black text-genz-dark uppercase tracking-widest border-l-4 border-genz-yellow pl-4 mb-10">The Visionaries</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    
+                    <!-- Founder: Farzeen -->
                     <div class="bg-white p-6 rounded-3xl border-4 border-genz-dark shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_rgba(15,23,42,1)] transition-all">
                         <div class="aspect-w-1 aspect-h-1 mb-6">
                             <img src="https://ui-avatars.com/api/?name=Farzeen&background=FACC15&color=0f172a&size=256&font-size=0.33&bold=true" alt="Founder" class="w-full h-auto rounded-2xl border-4 border-genz-dark object-cover grayscale hover:grayscale-0 transition-all duration-300">
@@ -33,6 +35,27 @@
                         <p class="text-genz-pink font-bold uppercase tracking-widest text-sm mb-4">Founder & Visionary</p>
                         <p class="text-gray-600 font-medium">Leading the charge to eliminate overhead and connect donors directly with those in critical need.</p>
                     </div>
+
+                    <!-- Co-Founder 1: Haris -->
+                    <div class="bg-white p-6 rounded-3xl border-4 border-genz-dark shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_rgba(15,23,42,1)] transition-all transform md:translate-y-8">
+                        <div class="aspect-w-1 aspect-h-1 mb-6">
+                            <img src="https://ui-avatars.com/api/?name=Haris&background=06B6D4&color=0f172a&size=256&font-size=0.33&bold=true" alt="Haris" class="w-full h-auto rounded-2xl border-4 border-genz-dark object-cover grayscale hover:grayscale-0 transition-all duration-300">
+                        </div>
+                        <h4 class="text-2xl font-black text-genz-dark uppercase">Haris</h4>
+                        <p class="text-genz-cyan font-bold uppercase tracking-widest text-sm mb-4">Co-Founder</p>
+                        <p class="text-gray-600 font-medium">Driving operational excellence and scaling our community outreach programs.</p>
+                    </div>
+
+                    <!-- Co-Founder 2: Aa Haram -->
+                    <div class="bg-white p-6 rounded-3xl border-4 border-genz-dark shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-2 hover:shadow-[12px_12px_0px_0px_rgba(15,23,42,1)] transition-all transform md:translate-y-16">
+                        <div class="aspect-w-1 aspect-h-1 mb-6">
+                            <img src="https://ui-avatars.com/api/?name=Aa+Haram&background=8B5CF6&color=ffffff&size=256&font-size=0.33&bold=true" alt="Aa Haram" class="w-full h-auto rounded-2xl border-4 border-genz-dark object-cover grayscale hover:grayscale-0 transition-all duration-300">
+                        </div>
+                        <h4 class="text-2xl font-black text-genz-dark uppercase">Aa Haram</h4>
+                        <p class="text-genz-purple font-bold uppercase tracking-widest text-sm mb-4">Co-Founder</p>
+                        <p class="text-gray-600 font-medium">Building strategic partnerships and securing critical funding networks.</p>
+                    </div>
+
                 </div>
             </div>
 
