@@ -1,37 +1,97 @@
 <x-app-layout title="Home">
     <!-- Hero Section -->
     <section class="relative bg-gray-900 text-white min-h-[85vh] flex items-center overflow-hidden">
+        <!-- Swiper Slider Background -->
         <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-black/60 z-10"></div>
-            <!-- Professional overlay with primary/accent hints -->
-            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary rounded-full mix-blend-overlay filter blur-[120px] opacity-20 translate-x-1/2 -translate-y-1/2"></div>
-            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent rounded-full mix-blend-overlay filter blur-[120px] opacity-20 -translate-x-1/4 translate-y-1/4"></div>
+            <div class="swiper hero-swiper h-full w-full">
+                <div class="swiper-wrapper">
+                    @php 
+                        $slides = [
+                            ['img' => 'humanitarian_aid.png', 'alt' => 'Humanitarian Aid'],
+                            ['img' => 'medical_care.png', 'alt' => 'Medical Care'],
+                            ['img' => 'education_support.png', 'alt' => 'Education Support'],
+                            ['img' => 'community_empowerment.png', 'alt' => 'Community Empowerment']
+                        ];
+                    @endphp
+                    @foreach($slides as $slide)
+                    <div class="swiper-slide relative">
+                        <img src="{{ asset('images/slider/' . $slide['img']) }}" alt="{{ $slide['alt'] }}" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/50 z-10"></div>
+                    </div>
+                    @endforeach
+                </div>
+                <!-- Optional: Add pagination/navigation if needed -->
+                <div class="swiper-pagination"></div>
+            </div>
+            
+            <!-- Professional overlay with primary/accent hints (Kept for aesthetic consistency) -->
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary rounded-full mix-blend-overlay filter blur-[120px] opacity-20 translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent rounded-full mix-blend-overlay filter blur-[120px] opacity-20 -translate-x-1/4 translate-y-1/4 z-20 pointer-events-none"></div>
         </div>
         
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-30">
             <div class="max-w-3xl">
-                <span class="inline-block py-1.5 px-4 bg-primary text-white font-semibold tracking-wider text-xs uppercase mb-6 rounded-full">Empowering Communities Since 2024</span>
+                <span class="inline-block py-1.5 px-4 bg-primary text-white font-semibold tracking-wider text-xs uppercase mb-6 rounded-full shadow-lg shadow-primary/20 animate-fade-in-down">Empowering Communities Since 2024</span>
                 
-                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight font-serif italic text-white">
+                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight font-serif italic text-white animate-fade-in-up">
                     We Rise By <br />
                     <span class="text-accent italic">Lifting Others</span>
                 </h1>
                 
-                <p class="text-lg md:text-xl mb-10 text-gray-300 max-w-2xl leading-relaxed">
+                <p class="text-lg md:text-xl mb-10 text-gray-300 max-w-2xl leading-relaxed animate-fade-in-up delay-150">
                     IELP is a dedicated ecosystem where your contributions directly fuel life-saving medical procedures and emergency infrastructure for those in crisis. Built on 100% transparency.
                 </p>
                 
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="{{ route('public.requests') }}" class="bg-accent hover:bg-accent-dark text-white px-10 py-4 rounded-xl font-bold text-lg text-center transition-all shadow-lg hover:shadow-accent/40">
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in-up delay-300">
+                    <a href="{{ route('public.requests') }}" class="bg-accent hover:bg-accent-dark text-white px-10 py-4 rounded-xl font-bold text-lg text-center transition-all shadow-lg hover:shadow-accent/40 transform hover:-translate-y-1">
                         Donate Now
                     </a>
-                    <a href="#mission" class="bg-transparent text-white border-2 border-white/30 px-10 py-4 rounded-xl font-bold text-lg text-center hover:bg-white/10 transition-all backdrop-blur-sm">
+                    <a href="#mission" class="bg-transparent text-white border-2 border-white/30 px-10 py-4 rounded-xl font-bold text-lg text-center hover:bg-white/10 transition-all backdrop-blur-sm transform hover:-translate-y-1">
                         Our Mission
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Swiper Initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new Swiper('.hero-swiper', {
+                loop: true,
+                effect: 'fade',
+                speed: 2000,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        });
+    </script>
+
+    <style>
+        .swiper-pagination-bullet { background: white !important; opacity: 0.5; }
+        .swiper-pagination-bullet-active { background: #db2777 !important; opacity: 1; transform: scale(1.2); }
+        .hero-swiper .swiper-slide img { transform: scale(1.1); transition: transform 10s linear; }
+        .hero-swiper .swiper-slide-active img { transform: scale(1.0); }
+        
+        @keyframes fade-in-down {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down { animation: fade-in-down 0.8s ease-out forwards; }
+        .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+        .delay-150 { animation-delay: 150ms; }
+        .delay-300 { animation-delay: 300ms; }
+    </style>
 
     <!-- Info Sections -->
     <section id="mission" class="relative z-30 -mt-16 pb-24">
