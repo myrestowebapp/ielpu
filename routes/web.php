@@ -35,6 +35,15 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        Route::get('/users', [AdminController::class, 'users'])->name('admin.users');
+        Route::get('/donations', [AdminController::class, 'donations'])->name('admin.donations');
+        Route::get('/campaigns', [AdminController::class, 'campaigns'])->name('admin.campaigns');
+        Route::get('/content', [AdminController::class, 'content'])->name('admin.content');
+        Route::get('/beneficiaries', [AdminController::class, 'beneficiaries'])->name('admin.beneficiaries');
+        Route::get('/allocations', [AdminController::class, 'allocations'])->name('admin.allocations');
+        Route::get('/reports', [AdminController::class, 'reports'])->name('admin.reports');
+        Route::get('/settings', [AdminController::class, 'settings'])->name('admin.settings');
+        
         Route::post('/requests/{id}/status', [AdminController::class, 'updateRequestStatus'])->name('admin.requests.status');
         Route::post('/distributions', [AdminController::class, 'storeDistribution'])->name('admin.distributions.store');
     });
