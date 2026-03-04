@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title }} | Empowering Communities</title>
-    <!-- Professional Typography -->
+    <!-- Professional Charity Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -15,13 +15,31 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#15803d', // Green-700
+                            light: '#16a34a', // Green-600
+                            dark: '#14532d', // Green-900
+                        },
+                        accent: {
+                            DEFAULT: '#db2777', // Magenta/Pink-600
+                            light: '#ec4899', // Pink-500
+                            dark: '#9d174d', // Pink-800
+                        }
+                    }
                 }
             }
         }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #F9FAFB; }
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; }
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        .bg-primary { background-color: #15803d; }
+        .text-primary { color: #15803d; }
+        .bg-accent { background-color: #db2777; }
+        .text-accent { color: #db2777; }
     </style>
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
